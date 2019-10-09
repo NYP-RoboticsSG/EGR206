@@ -23,8 +23,9 @@ fi
 find /home/pi/* -type f -mtime -1 -exec rm {} \;
 find /home/pi/* -type f -name "*.py" -mtime -1 -exec rm {} \;
 #find /home/pi/* -type d -mtime -1 -exec rm {} -r \;
+find /home/pi/Desktop/* -name "*.py" -exec rm {} \;
 find /home/pi/Desktop/* -type d -mtime -1 -exec rm {} -r \;
-find /home/pi/Desktop/* -type f -name "*.py" -mtime -1 -exec rm {} \;
+
 
 echo "Running" > /etc/runT.txt
 
