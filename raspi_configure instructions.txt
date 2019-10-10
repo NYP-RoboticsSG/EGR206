@@ -1,0 +1,43 @@
+>>$sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=SG
+
+#R407
+network={
+        ssid="NETGEAR54"
+        psk="bravejetcar008"
+        key_mgmt=WPA-PSK
+}
+
+#R414 Even numbers Raspberry
+network={
+       ssid="NETGEAR35"
+       psk="fluffylake937"
+       key_mgmt=WPA-PSK
+}
+
+#R414 Odd numbers Raspberry
+#network={
+#       ssid="Linksys16437"
+#       psk="nw95bbfdy5"
+#       key_mgmt=WPA-PSK
+#}
+
+
+>>$sudo nano /etc/rc.local
+find /home/pi/* -type f -mtime -1 -exec rm {} \;
+find /home/pi/* -type f -name "*.py" -mtime -1 -exec rm {} \;
+#find /home/pi/* -type d -mtime -1 -exec rm {} -r \;
+find /home/pi/Desktop/* -name "*.py" -exec rm {} \;
+find /home/pi/Desktop/* -type d -mtime -1 -exec rm {} -r \;
+
+>>$sudo nano /etc/ntp.conf
+
+server 0.sg.pool.ntp.org
+server 1.sg.pool.ntp.org
+server 2.sg.pool.ntp.org
+server 3.sg.pool.ntp.org
+
+>>sudo timedatectl set-ntp True
