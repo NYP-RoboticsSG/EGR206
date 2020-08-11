@@ -39,5 +39,6 @@ server 0.sg.pool.ntp.org
 server 1.sg.pool.ntp.org
 server 2.sg.pool.ntp.org
 server 3.sg.pool.ntp.org
+#Clock.nyp.edu.sg or 172.22.16.97
 
 >>sudo timedatectl set-ntp True
